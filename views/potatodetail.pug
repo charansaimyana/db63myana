@@ -1,0 +1,26 @@
+extends layout 
+ 
+block content 
+  h1= title 
+  if (toShow == null) 
+    h2 No instance to delete 
+  else 
+  - let id = toShow._id 
+  - let type = toShow.type 
+  - let expdate = toShow.expdate 
+  - let cost = toShow.cost 
+  div(class="card card-body" style="width: 30rem;") 
+    div(class="row p-3 mb-2 bg-secondary text-white") 
+      div(class=' mr-3 col-sm-6') potato ID: 
+      div(class=' mr-3 col-sm-6') #{id} 
+    div(class="row p-3 mb-2 bg-secondary text-white") 
+      div(class=' mr-3 col-sm-6') Type: 
+      div(class=' mr-3 col-sm-6') #{type} 
+    div(class="row p-3 mb-2 bg-secondary text-white") 
+      div(class=' mr-3  col-sm-6') expdate  : 
+      div(class=' mr-3 col-sm-6')  #{expdate} 
+    div(class="row p-3 mb-2 bg-secondary text-white") 
+      div(class=' mr-3 col-sm-6') Cost: 
+      div(class=' mr-3 col-sm-6') $#{cost}
+    div(class="d-flex flex-row justify-content-center")      
+            a(href='/potato' class="btn btn-secondary") Go To potatoes
