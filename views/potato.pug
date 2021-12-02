@@ -12,8 +12,12 @@ block content
     div(class="row  m-1") 
       each item in potato 
        - let destination = `dispatch(\"/potato/update?id=${item._id}\")` 
+       - let detailView = `dispatch(\"/pototo/detail?id=${item._id}\")`
+       - let deleteView = `dispatch(\"/pototo/delete?id=${item._id}\")`
         div(class="row-sm-2", class="m-1") potato #{item.type}(#{item.expdate}) is #{item.cost}
             button.btn( class="btn-primary ml-1", onclick= destination) Update
+            button.btn(class="btn-primary ml-2", onclick= detailView) Detail
+            button.btn(class="btn-danger ml-2", onclick= deleteView) Delete
             
         script.                
             function buy(itemNo)
